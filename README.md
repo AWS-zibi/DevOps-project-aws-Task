@@ -77,9 +77,9 @@ The application is publicly accessible through a Kubernetes LoadBalancer service
 3. **Prometheus & Grafana Setup**
 
    - Apply manifests:
-     kubectl apply -f prometheus-pvc.yaml
-     kubectl apply -f prometheus-deployment.yaml
-     kubectl apply -f grafana-deployment.yaml
+     _kubectl apply -f prometheus-pvc.yaml
+     _kubectl apply -f prometheus-deployment.yaml
+     _kubectl apply -f grafana-deployment.yaml
 
    - Access Grafana:
      - URL: `http://aff9e1820101845a397e1cb654d76a1b-152516336.ap-south-1.elb.amazonaws.com/login`  
