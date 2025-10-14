@@ -30,44 +30,43 @@ The application is publicly accessible through a Kubernetes LoadBalancer service
 
 ## Architecture
 
-          +-----------------+
-          |   Developer     |
-          +-----------------+
-                   |
-                   v
-          +-----------------+
-          |     GitHub      |
-          +-----------------+
-                   |
-                   v
-          +-----------------+
-          |     Jenkins     |
-          |----------------|
-          | 1. Build Docker |
-          | 2. Trivy Scan   |
-          | 3. Push to ECR  |
-          | 4. Deploy to EKS|
-          +-----------------+
-                   |
-                   v
-          +-----------------+
-          |     AWS ECR     |
-          +-----------------+
-                   |
-                   v
-          +---------------------------+
-          |        EKS Cluster        |
-          |--------------------------|
-          | - Application Pod        |
-          | - Prometheus Pod         |
-          | - Grafana Pod            |
-          +--------------------------+
-          |             |
-          v             v
-+----------------+  +----------------+
-| User App UI    |  | Grafana UI     |
-+----------------+  +----------------+
-
+                         +-----------------+
+                         |   Developer     |
+                         +-----------------+
+                                 |
+                                 v
+                         +-----------------+
+                         |     GitHub      |
+                         +-----------------+
+                                 |
+                                 v
+                         +-----------------+
+                         |     Jenkins     |
+                         |-----------------|
+                         | 1. Build Docker |
+                         | 2. Trivy Scan   |
+                         | 3. Push to ECR  |
+                         | 4. Deploy to EKS|
+                         +-----------------+
+                                 |
+                                 v
+                         +-----------------+
+                         |     AWS ECR     |
+                         +-----------------+
+                                 |
+                                 v
+                     +--------------------------+
+                     |        EKS Cluster       |
+                     |--------------------------|
+                     | - Application Pod        |
+                     | - Prometheus Pod         |
+                     | - Grafana Pod            |
+                     +--------------------------+
+                           |             |
+                           v             v
+                 +----------------+  +----------------+
+                 | User App UI    |  | Grafana UI     | 
+                 +----------------+  +----------------+
 
 ## [GitHub] --push--> [Jenkins Pipeline] --build & scan--> [ECR] --deploy--> [EKS Cluster] --metrics--> [Prometheus + Grafana]
 
