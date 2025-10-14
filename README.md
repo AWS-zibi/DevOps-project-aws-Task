@@ -130,6 +130,27 @@ The application is publicly accessible through a Kubernetes LoadBalancer service
 
 ---
 
+## Project Highlights (Positive Points)
+
+- CI/CD pipeline fully implemented using Jenkins.
+- Docker images built and pushed to AWS ECR with Git commit hash tagging.
+- Kubernetes deployment on AWS EKS automated with Jenkins pipeline.
+- Container image vulnerability scanning integrated using Trivy.
+- Monitoring setup using Prometheus and Grafana (Grafana deployed successfully via Helm).
+- Workspace cleanup implemented in Jenkins with `cleanWs()`.
+
+---
+
+## Known Issues / Limitations (Negative Points)
+
+- Some Prometheus pods may remain in `Pending` status due to **PVC binding or node resource limits**.
+- If the AWS EC2 instance resources are exhausted, pipeline or pods may fail to schedule.
+- Grafana is running, but sometimes it cannot connect to Prometheus due to namespace or PVC issues.
+- Monitoring dashboards may not show metrics until Prometheus pods are fully running.
+- Limited AWS resources (like T3.medium instances) may affect cluster performance and pod scheduling.
+
+---
+
 ## References
 
 - [AWS EKS Documentation](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html & LLM https://ChatGPT, https://claude.ai/)
