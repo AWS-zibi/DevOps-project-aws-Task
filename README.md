@@ -90,7 +90,7 @@ The application is publicly accessible through a Kubernetes LoadBalancer service
 4. **Trivy Security Scan**
 
    - Run Trivy in pipeline:
-     ```bash   ```
+       bash   
    - Pipeline will fail if vulnerabilities are found
 
 ---
