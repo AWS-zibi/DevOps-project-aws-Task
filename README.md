@@ -82,7 +82,7 @@ The application is publicly accessible through a Kubernetes LoadBalancer service
      _kubectl apply -f grafana-deployment.yaml
 
    - Access Grafana:
-     - URL: `http://aff9e1820101845a397e1cb654d76a1b-152516336.ap-south-1.elb.amazonaws.com/login`  
+     - URL: {http://aff9e1820101845a397e1cb654d76a1b-152516336.ap-south-1.elb.amazonaws.com/login}  
        Username: `admin`  
        Password: `admin123`
    - Add Prometheus as a data source in Grafana
